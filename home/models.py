@@ -21,14 +21,6 @@ class UserProfile(models.Model):
     picture = models.ImageField(height_field=None, width_field=None, max_length=2000)
     # role_id = models.ForeignKey(Role, on_delete=models.CASCADE)
 
-
-class UserAccount(models.Model):
-    username = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
-    status = models.CharField(max_length=10)
-    user_id = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-
-
 class Job(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=255)
