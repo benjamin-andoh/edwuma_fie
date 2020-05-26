@@ -1,0 +1,173 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+
+/* css for content of pages */
+.content{
+    margin-left: 10em;
+    margin-left: 10em;
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+.fl-pm-dk{
+    background-color: #207441;
+    color: #f3f3f3;
+}
+.fl-pm-lt{
+    background-color: #20c141;
+    fill: #20c141;
+}
+.fl-pm-gr{
+    background-color: #def0ef;
+    
+}
+.fl-sc-dk{
+    background-color: #0f0f0f;
+}
+.fl-sc-lt{
+    background-color: #333333;
+}
+.fl-sc-gr{
+    background-color: #f3f3f3;
+}
+
+
+.fl-btn-small{
+    background-color: #207441;
+    border-radius: 30px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border-width: 0em;
+    text-decoration: #f3f3f3;   
+}
+
+.fl-btn-small:hover{
+    background-color: #20c141;
+}
+
+.fl-btn-small:focus{
+    background-color: #20c141;
+    border-color: #207441;
+    border-width: 0px;
+}
+
+
+.fl-btn-small-dk{
+    background-color: #333333;
+    border-radius: 30px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border-width: 0em;
+    text-decoration: #f3f3f3;   
+}
+
+.fl-btn-small-dk:hover{
+    background-color: #0f0f0f;
+}
+
+.fl-btn-small-dk:focus{
+    background-color:#0f0f0f;
+    border-color:#333333;
+    border-width: 0px;
+}
+
+.fl-nav-items{
+    /* float: right; */
+    align-content: flex-end;
+}
+.fl-nav-right-pad{
+    padding-right: 15em;
+}
+
+.fl-nav-light{
+    background-color: #def0ef;
+}
+
+
+/* footer */
+
+.fl-foot-bk1{
+    background-color: #333333;
+    padding-top: 1rem;
+    color: #f3f3f3;
+    padding-left: 2rem;
+}
+.fl-foot-bk2{
+    background-color: #0f0f0f;
+    padding-top: 1rem;
+}
+.footer-first-col{
+   margin-top: 2rem;
+}
+
+/* icons */
+.fa{
+    color: #207441;
+}
+.fa:hover{
+    color: #20c141;
+}
+.fa-dk{
+    color: #def0ef;
+}
+.fa-dk:hover{
+    color: #20c141;
+}
+/* ------modal elements ----- */
+.fl-modal-login{
+    padding-left: 3em;
+    padding-right: 3em;
+    width: 18rem;
+}
+.fl-modal-cnt {
+    margin-left: auto;
+    margin-right: auto;
+}
+.modal-footer-forgot{
+    margin-top: 2rem;
+    display: none;
+}
+.modal-footer{
+    padding-bottom: 1.5rem;
+}
+.modal-header{
+    margin-bottom: 1rem;
+}
+
+.fl-input-sm {
+    border-radius: 2rem;
+    width: 18rem;
+} 
+#google-sign {
+    margin-top: 2rem;
+}
+
+
+
+
+/* ------------------ */
+
+.fl-input { 
+    position: relative; 
+    text-align: left;
+    
+}
+
+/* style icon */
+.fl-input .input-icon{
+  position: absolute;
+  padding: 10px;
+  padding-left: 1em;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.fl-left input { padding-left:  3rem; }
+.fl-right input { padding-right: 1rem; }
+
+

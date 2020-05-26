@@ -1,0 +1,244 @@
+ {% load static %}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/base.css' %}" >
+    <link rel= "stylesheet" type = "text/cs" href = "{% static 'css/fontawesome.min.css' %}">
+    <!-- favicon -->
+    <link rel="icon" height="32"
+      type="image/png" 
+      href="{% static 'img/home/favicon.png' %}">
+  </head>
+  <body>
+    <!-- Navbar for homepage links -->
+     <nav class="navbar navbar-expand-md navbar-light">
+     
+    <a class="navbar-brand " href="#" ><img src = "{% static 'img/home/logo.png' %}" height = "50"/></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav mr-auto ">  </ul>
+
+        <ul class="navbar-nav fl-nav-right-pad">
+            {% if request.user.is_staff %}
+            <li class="nav-item ">
+               <a name="" class="btn btn-success fl-btn-small mr-md-5"
+                  href="{% url 'register' %}"
+                  role="button">Register</a>
+            </li>
+            <li class= "nav-item">
+                <a name="" class="btn btn-success fl-btn-small"
+                   href="{% url 'login' %}"
+                   role="button">Login</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+
+     <div>
+         <span class="hello-msg"> hello, {{ request.user }}</span>
+         <span><a class="hello-msg" href="{% url 'logout' %}"> logout </a></span>
+     </div>
+</nav>
+
+    <!-- End of Navbar -->
+
+    {% block content %}
+
+    {% endblock content %}
+
+
+<!-- Footer -->
+	<section class = "text-white fl-foot-bk1 ">
+		<div class=" fl-foot-bk1">
+			<div class="row text-center text-xs-center text-sm-left text-md-left ">
+				<div class="col-xs-12 col-sm- col-md-">
+					 <img class = "footer-first-col" src = "{% static 'img/home/logo.png' %}" height = "50" />
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Dropdown button
+                    </button>
+  
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+		</div>
+				<div class="col-xs-12 col-sm-2 col-md-2">
+					<h5 class = "text-light" >Company</h5>
+					<ul class="list-unstyled quick-links text-light">
+						<li><a class = "text-light" href="">About Us</a></li>
+						<li><a class = "text-light" href="">Carees</a></li>
+						<li><a class = "text-light" href="">Our Partners</a></li>
+						<li><a class = "text-light" href="">How it works</a></li>
+						<li><a class = "text-light" href="">Our Team</a></li>
+                        <li><a class = "text-light" href="">FAQ</a></li>
+                        <li><a class = "text-light" href="">Privacy Policy</a></li>
+					</ul>
+				</div>
+                	<div class="col-xs-12 col-sm-2 col-md-2">
+					<h5 class = "text-light" >Categories</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a class = "text-light" href="">Graphic Design</a></li>
+						<li><a class = "text-light" href="">Digital Marketing</a></li>
+						<li><a class = "text-light" href="">Writing & Translation</a></li>
+						<li><a class = "text-light" href="">Video & Animation</a></li>
+						<li><a class = "text-light" href="">Music & Audio</a></li>
+					</ul>
+				</div>
+                <div class="col-xs-12 col-sm-2 col-md-2">
+                <br>
+               			<ul class="list-unstyled quick-links">
+						<li><a class = "text-light" href="">Web Development</a></li>
+						<li><a class = "text-light" href="">Mobile App Developement</a></li>
+						<li><a class = "text-light" href="">Business</a></li>
+						<li><a class = "text-light" href="">Life Style</a></li>
+						<li><a class = "text-light" href="">Accounting</a></li>
+					</ul>
+				</div>
+                
+                
+				
+                <div class="col-xs-12 col-sm-2 col-md-2">
+					<h5 class = "text-light" >Browse</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a class = "text-light" href="">Freelancers by Skill</a></li>
+						<li><a class = "text-light" href="">Freelancers in Europe</a></li>
+						<li><a class = "text-light" href="">Freelancers in Asia</a></li>
+						<li><a class = "text-light" href="">Freelancers in Africa</a></li>
+						<li><a class = "text-light" href="">Jobs in Europe</a></li>
+                        <li><a class = "text-light" href="">Jobs in US</a></li>
+                        <li><a class = "text-light" href="">Find Jobs</a></li>
+					</ul>
+				</div>
+			</div>
+  
+	
+	</section>
+    
+      <div class="fl-foot-bk2 ">
+  <div class="row ">
+    <div class="col-4">
+    <ul class="list-unstyled list-inline social text-center">
+	<li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
+	<li class="list-inline-item"><a href=""><i class="fa fa-twitter"></i></a></li>
+	<li class="list-inline-item"><a href=""><i class="fa fa-instagram"></i></a></li>
+	<li class="list-inline-item"><a href=""><i class="fa fa-google-plus"></i></a></li>
+	<li class="list-inline-item"><a href="" target="_blank"><i class="fa fa-envelope"></i></a></li>
+	</ul></div>
+    <div class="col-8">	<p class="h6 text-light ">© All right Reversed.<a class="text-light ml-2" href="" target="_blank">freelance.com</a></p>
+</div>
+  </div>
+</div>
+
+	<!-- ./Footer -->
+
+    <!-- Login Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header fl-pm-dk">
+        <h5 class="modal-title" id="loginModalLabel">Login and start work</h5>
+    
+      </div>
+      <div class="modal-body fl-modal-cnt">
+      <!-- TODO: This is for server side, there is another version for browser defaults -->
+        <form class = "form-group " action = "">
+          <div class="form-group fl-input fl-left">
+            <i class="fa fa-envelope input-icon" aria-hidden="true"></i>
+            <input class = "form-control input-success fl-input-sm" type="email" class="form-control" id="user-email" placeholder = "Email" >
+          </div>
+           <div class="form-group fl-input fl-left">
+            <i class="fa fa-lock fl-left input-icon" aria-hidden="true"></i>
+            <input class = "form-control input-success fl-input-sm" type="password" class="form-control" name = "user-pwd" id="user-pwd"  placeholder = "Password" >
+          </div>
+          <div class="invalid-feedback">
+          The email or password you entered is incorrect
+         </div>
+          <button type="submit" class="btn btn-success fl-btn-small fl-modal-login" >Login</button> 
+        </form>
+        <a id= "forgotten" href = "#">Forgotten Passowrd?<a/>
+        <!--- Toggle password reset   -->
+    
+    <div class = "modal-footer-forgot fl-modal-cnt">
+<form class = "form-group" action = "">
+           
+          <div class="form-group fl-input fl-left">
+            <i class="fa fa-envelope input-icon" aria-hidden="true"></i>
+            <input class = "form-control input-success fl-input-sm" type="email" class="form-control" id="user-email" placeholder = "Email" >
+          </div>
+          <div class="invalid-feedback">
+          The email or password you entered is incorrect
+         </div>
+          <button type="submit" class="btn btn-success fl-btn-small fl-modal-login reset" >Reset Password</button> 
+        </form>    </div>
+      </div>
+      <div class="modal-footer ">
+      <div class = "modal-footer-signup fl-modal-cnt">
+        <p class = "" >Not having an account?</p>
+        <button id = "signUpId" type="submit" class="btn btn-secondary fl-btn-small-dk fl-modal-login" data-toggle="modal" data-target="#signUpModal"  >Sign Up</button>
+       
+       <br>  
+       <a name="" id="google-sign" class="btn btn-secondary fl-btn-small-dk fl-modal-login  fl-sc-dk" href="#" role="button">
+       Sign with Google <i class="fa fa-google fa-dk" style = "padding-left:1rem" aria-hidden="true"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!--  End of login-->
+
+    <!--    Sign up modal -->
+       <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+           <div class="modal-dialog modal-md" role="document">
+               <div class="modal-content">
+                   <div class="modal-header fl-pm-dk">
+                       <h5 class="modal-title">Get your account</h5>
+                   </div>
+                   <div class="modal-body fl-modal-cnt">
+                       <form class = "form-group" action = "">
+           
+          <div class="form-group fl-input fl-left">
+            <i class="fa fa-envelope input-icon" aria-hidden="true"></i>
+            <input class = "form-control input-success fl-input-sm" type="email" class="form-control" id="user-email" placeholder = "Sign up with Email" >
+          </div>
+          <div class="invalid-feedback">
+          The email or password you entered is incorrect
+         </div>
+          <button type="submit" class="btn btn-success fl-btn-small fl-modal-login reset" >Get your free account</button> 
+        </form>    
+        </div>
+
+                <div class="modal-footer fl-modal-cnt">
+        <a name="" id="google-sign" class="btn btn-secondary fl-btn-small-dk fl-modal-login  fl-sc-dk" href="#" role="button">
+        Sign with Google <i class="fa fa-google fa-dk" style = "padding-left:1rem" aria-hidden="true"></i></a>
+                   </div>
+               </div>
+           </div>
+       </div>
+    <!--  End of  Sign up modal -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}" ></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}" ></script>
+    <script src="{% static 'js/fontawesome.min.js' %}" ></script>
+    <script src="{% static 'js/customscripts.js' %}" ></script>
+  </body>
+</html>
