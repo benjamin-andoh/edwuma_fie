@@ -170,4 +170,62 @@
 .fl-left input { padding-left:  3rem; }
 .fl-right input { padding-right: 1rem; }
 
+/* ----- login styling  */
 
+.fl-login-bk{
+    background-color: #def0ef;
+   -moz-box-align: center;
+}
+
+.user_card {
+    width: 350px;
+    height: 350px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #333333;
+    position: absolute;
+    top:50%;
+    bottom:50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+
+}
+.login_btn {
+    width: 100%;
+    color: white;
+}
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+#messages{
+    background-color: grey;
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.form_container {
+    margin-top: 20px;
+}
+
+#form-title{
+    color: #fff;
+
+}
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.login_container {
+    padding: 0 2rem;
+}
