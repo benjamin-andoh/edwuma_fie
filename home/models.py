@@ -13,11 +13,11 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    firstname = models.CharField(max_length=50)
-    lastname = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
     phone = PhoneNumberField(blank=True)
-    location = models.CharField(max_length=50)
+    location_country = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    language = models.CharField(max_length=50)
     bio = models.TextField(max_length=50)
     registration_date = models.DateField(auto_now=False, auto_now_add=False)
     picture = models.ImageField(height_field=None, width_field=None, max_length=2000)
@@ -46,6 +46,7 @@ class Certificate(models.Model):
 
 
 class FreelancerSkill(models.Model):
+    skill
     created_date = models.DateField(auto_now=False, auto_now_add=False)
     updated_date = models.DateField(auto_now=False, auto_now_add=False)
     user_id = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
