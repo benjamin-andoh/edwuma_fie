@@ -46,7 +46,6 @@ class Certificate(models.Model):
 
 
 class FreelancerSkill(models.Model):
-    skill
     created_date = models.DateField(auto_now=False, auto_now_add=False)
     updated_date = models.DateField(auto_now=False, auto_now_add=False)
     user_id = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
