@@ -263,3 +263,7 @@
 
 
 /* styling for profile setup */
+
+.skills {
+    display: none;
+}
