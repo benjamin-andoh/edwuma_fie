@@ -1,0 +1,105 @@
+{% load static %} 
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/base.css' %}" >
+    <link rel= "stylesheet" type = "text/cs" href = "{% static 'css/fontawesome.min.css' %}">
+    <title>Homepage</title>
+   
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-sm navbar-success bg-light dash-nav">
+        <a class="navbar-brand" href="#"><img src="{% static 'img/home/logo.png'%} " class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""></a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Action 1</a>
+                        <a class="dropdown-item" href="#">Action 2</a>
+                    </div>
+                </li>
+            </ul>
+         
+        
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        <div class="">
+            <a href="#" class=""><i class="fas fa-fonticons-fi"></i></a>
+        </div>
+        </div>
+    </nav>
+
+    {% comment %} <div class="card row dash-menu" style = "width:18rem;">
+        <div class="card-body">
+            <h3 class="card-title">Menu</h3>
+        </div>
+     <div class="list-group">
+  
+  <a href="#" class="list-group-item list-group-item-action">
+   <i class="fa fa-home" aria-hidden="true"></i> Home</a>
+  <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+  <a href="#" class="list-group-item list-group-item-action">Messages</a>
+  <a href="#" class="list-group-item list-group-item-action">Contracts</a>
+  <a href="#" class="list-group-item list-group-item-action">Portfolio</a>
+  <a href="#" class="list-group-item list-group-item-action">Search</a>
+  <a href="#" class="list-group-item list-group-item-action">Upload Work</a>
+  <a href="#" class="list-group-item list-group-item-action">Post Job</a>
+
+</div>
+<div class = "col"> {% endcomment %}
+        {% comment %} {% block content %} {% endcomment %}
+
+        <h2>this is the main section</h2>
+
+        {% comment %} {% endblock content %} {% endcomment %}
+
+    </div>
+    </div>
+    <div class="row">
+  <div class="col-3 dash-manu">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="{% url 'profile' %} " role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Contracts</a>
+      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Portfolio</a>
+      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Search</a>
+      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Upload Work</a>
+      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Post Job</a>
+      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+    </div>
+  </div>/
+  {% block content %}
+  {% comment %} <div class="col-9">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+    </div>
+  </div>
+</div> {% endcomment %}
+
+{% endblock content%}
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}" ></script>
+    <script src="{% static 'js/fontawesome.min.js' %}" ></script>
+
+  </body>
+</html>
