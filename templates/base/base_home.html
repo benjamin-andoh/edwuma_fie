@@ -30,7 +30,6 @@
      <ul class="navbar-nav mr-auto ">  </ul>
 
         <ul class="navbar-nav fl-nav-right-pad">
-            {% if request.user.is_staff %}
             <li class="nav-item ">
                <a name="" class="btn btn-success fl-btn-small mr-md-5"
                   href="{% url 'register' %}"
@@ -41,14 +40,10 @@
                    href="{% url 'login' %}"
                    role="button">Login</a>
             </li>
-            {% endif %}
         </ul>
     </div>
 
-     <div>
-         <span class="hello-msg"> hello, {{ request.user }}</span>
-         <span><a class="hello-msg" href="{% url 'logout' %}"> logout </a></span>
-     </div>
+
 </nav>
 
     <!-- End of Navbar -->
