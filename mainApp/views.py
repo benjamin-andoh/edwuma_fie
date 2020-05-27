@@ -7,3 +7,6 @@ def MainView(request):
 
 def SettingView(request):
     return render(request,'dashboard/settings.html')
+
+def PostView(request):
+    return render(request,'dashboard/postjob.html')

@@ -1720,7 +1720,7 @@ pre code {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #d1d3e2;
-  border-radius: 0.35rem;
+  border-radius: 30px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
