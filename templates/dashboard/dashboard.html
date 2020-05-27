@@ -1,75 +1,13 @@
- {% extends 'base/base_dash.html' %}
+{% extends 'base/base_dash.html' %}
+{% load static from static%}
+
+{% block title%}
+    Dashboard
+{% endblock %}
 
 
- {% load static %}
+{% block content%}
 
- 
+<h1>This is the dashboard page</h1>
 
-
-{% comment %} <!doctype html>
-<html lang="en">
-  <head> {% endcomment %}
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type = "text/css" href="{% static 'css/bootstrap.min.css' %}" >
-    <link rel="stylesheet" type = "text/css" href="{% static 'css/base.css' %}" >
-    <link rel= "stylesheet" type = "text/cs" href = "{% static 'css/fontawesome.min.css' %}">
-    {% comment %} <title>Homepage</title>
-   
-  </head>
-  <body> {% endcomment %}
-  {% block content %}
-      {% comment %} <div class="card" style ="width = 10rem">
-       
-        <div class="card-body">
-          <h4 class="card-title">Welcome back!</h4>
-          <p class="card-text">Text</p>
-        </div>
-      </div> {% endcomment %}
-    <div class="col-9">
-    {% comment %} <div class="tab-content" id="v-pills-tabContent">
-      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-      <h4>This space is for home</h4> {% endcomment %}
-      
-      
-      </div>
-      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-      
-      <h4>This space is for home</h4>
-      
-      </div>
-      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-      
-      <h4>This space is for messages</h4>
-
-      </div>
-      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-      
-      <h4>This space is for settings</h4>
-
-      
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}" ></script>
-    <script src="{% static 'js/fontawesome.min.js' %}" ></script>
-
-  {% comment %} </body>
-</html> {% endcomment %}
-{% comment %} {% extends 'base/footer.html' %} {% endcomment %}
-
- {% endblock content %}
+{% endblock %}

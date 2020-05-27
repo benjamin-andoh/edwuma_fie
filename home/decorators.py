@@ -44,7 +44,7 @@ def admin_only(view_func):
         if group == 'freelancer' or group == 'jobOwner':
             return redirect('user')
 
-        if group == 'admin':
+        if group == 'adminside':
             return view_func(request, *args, **kwargs)
 
     return wrapper_func
