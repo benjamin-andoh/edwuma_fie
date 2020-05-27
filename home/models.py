@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -11,6 +12,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     firstname = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
@@ -22,6 +24,7 @@ class UserProfile(models.Model):
     # role_id = models.ForeignKey(Role, on_delete=models.CASCADE)
 
 class Job(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=255)
     budget = models.CharField(max_length=20)

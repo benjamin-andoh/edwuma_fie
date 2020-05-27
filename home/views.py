@@ -14,6 +14,11 @@ from django.contrib.auth.decorators import login_required
 
 # @login_required(login_url='login')
 # @admin_only
+
+def accountProfile(request):
+    return render(request,'account_profile.html')
+
+
 def homePage(request):
     job = Job.objects.all()
     context = {job: 'job'}
@@ -51,7 +56,7 @@ def loginPage(request):
             login(request, user)
             return redirect('home')
         else:
-            messages.info(request, 'Username Or password incorrect')
+            messages.info(request, 'Username or password incorrect')
 
     context = {}
     return render(request, 'base/login.html', context)
