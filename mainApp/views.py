@@ -10,3 +10,6 @@ def SettingView(request):
 
 def PostView(request):
     return render(request,'dashboard/postjob.html')
+
+def ProfileView(request):
+    return render(request,'dashboard/profile.html')
