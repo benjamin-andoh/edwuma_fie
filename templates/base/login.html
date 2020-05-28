@@ -1,84 +1,57 @@
+{% extends 'base/formbase.html'%}
 {% load static %}
 
-<!DOCTYPE html>
-<html>
+{% block content %}
+<body class="parallax bg-gradient-primary">
 
-<head>
-	<title>Login</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type = "text/css" href="{% static 'css/bootstrap.min.css' %}" >
-    <link rel="stylesheet" type = "text/css" href="{% static 'css/base.css' %}" >
-    <link rel= "stylesheet" type = "text/cs" href = "{% static 'css/fontawesome.min.css' %}">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <div class="container">
 
+    <div style="margin-left: 250px;" class="card o-hidden border-0 shadow-lg my-5 w-50">
+      <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class=" col big-box">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                  </div>
+                  <form class="user">
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-control custom-checkbox small">
+                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                      </div>
+                    </div>
+                    <input type="submit" style="background-color: #207b41; border-color: #207b41;" href="#" class="btn btn-primary btn-user btn-block" value="Login">
 
-	<style>
-		/* body,
-		html {margin: 0;
-			padding: 0;
-			height: 100%; */
-			/* background: #fff; */
+                    <hr>
+                    <a href="index.html" class="btn btn-google btn-user btn-block">
+                      <i class="fab fa-google fa-fw"></i> Login with Google
+                    </a>
+                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                    </a>
+                  </form>
+                  <hr>
+                  <div class="text-center">
+                    <a class="small" href="{%url 'register'%}">Create an Account!</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-		}
-		
-	
+      </div>
 
-		/* .input-group-text {
-			background: #f7ba5b !important;
-			color: white !important;
-			border: 0 !important;
-			border-radius: 0.25rem 0 0 0.25rem !important;
-		} */
-	
-	</style>
+    </div>
 
-</head>
-<body class = "fl-login-bk">
-	<div class="container h-100 " >
-		<div class="d-flex justify-content-center h-100">
-			<div class="user_card ">
-				<div class="d-flex justify-content-center">
-
-
-					<h3 id="form-title">LOGIN</h3>
-				</div>
-				<div class="d-flex justify-content-center form_container">
-					<form method="POST" action="">
-						{% csrf_token %}
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class=" fas fa-user"></i></span>
-							</div>
-							<input type="text" name="username" placeholder="Username..." class="form-control">
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-								<input type="password" name="password" placeholder="Password..." class="form-control" >
-						</div>
-
-							<div class="d-flex justify-content-center mt-3">
-				 				<input class=" fl-btn-small btn btn-success login_btn" type="submit" value="Login">
-				   			</div>
-					</form>
-
-				</div>
-
-				{% for message in messages %}
-					<p id="messages">{{ message }}</p>
-				{% endfor %}
-
-				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-
-</html>
+  </div>
+</body>>
+{% endblock %}
