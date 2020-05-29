@@ -263,3 +263,56 @@
 
 
 /* styling for profile setup */
+
+.skills {
+    display: none;
+}
+
+.profile-card {
+    width: 50rem;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skilladd {
+    margin-bottom: 0.5rem;
+}
+
+.skilladd input[type='radio']:checked {
+    background-color: #20c141;
+}
+
+
+/* profile form setup styles  */
+
+.eduForm-holder-remove {
+    display: none;
+}
+
+
+/* profile image upload*/
+
+#imageUpload {
+    display: none;
+}
+
+#profileImage {
+    cursor: pointer;
+}
+
+#profile-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#profile-container img {
+    width: 150px;
+    height: 150px;
+}

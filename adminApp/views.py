@@ -6,3 +6,6 @@ def AdminHomePage(request):
 
 def NewSkill(request):
     return render(request,'adminside/newskill.html')
+
+def AdminProfile(request):
+    return render(request,'adminside/adminprofile.html')
