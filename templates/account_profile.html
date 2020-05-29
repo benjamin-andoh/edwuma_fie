@@ -8,124 +8,229 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link href="{% static 'form/css/sb-admin-2.min.css'%}" rel="stylesheet">
     <link rel="stylesheet" type = "text/css" href="{% static 'css/bootstrap.min.css' %}" >
-    <link rel="stylesheet" type = "text/css" href="{% static 'css/base.css' %}" >
     <link rel= "stylesheet" type = "text/cs" href = "{% static 'css/fontawesome.min.css' %}">
-    <title>Index page</title> 
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/base.css' %}" >
+
+    <!-- CSS -->
+    <title>Profile</title> 
   </head>
   <body>
 
-  <p> this page is for registration </p>
+      <div class = "profile-card">
 
-   <div class="container-fluid fl-sc-gr">
-   <div class="row">
-  <div class="col-3">
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-    </div>
+      <div class="card">
+  <div class="card-header">
+    <h4>Set your account up</h4>
   </div>
-  <div class="col-9">
-    <div class="tab-content" id="v-pills-tabContent">
-    <!-- skills section-->
-      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-      <h4> What primary service do you offer?</h4>
-      <div class="form-group">
-        <label for=""></label>
-        <select class="custom-select" name="" id="category">
-          <option value ="default"  selected>Select</option>
-          <option value="1" >Accounting & Consulting</option>
-          <option value="2">Admin Support</option>
-          <option value="3">Customer Service</option>
-        </select>
-      </div>
-      <div id = "skills" class = "skills">
-      <p>Select Specialization</p>
-      <table class="table">
-        <tbody>
-          <tr>
-            <td scope="row">  <div class="form-check form-check">
-      
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="" id="" value="checkedValue"> Database Administration
-        </label>
-      </div></td>
-            <td>  <div class="form-check form-check">
-      
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="" id="" value="checkedValue"> Database Administration
-        </label>
-      </div></td>
-            <td>  <div class="form-check form-check">
-      
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="" id="" value="checkedValue"> Database Administration
-        </label>
-      </div></td>
-          </tr>
-          <tr>
-            <td scope="row">
-              <div class="form-check form-check">
-      
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="" id="" value="checkedValue"> Database Administration
-        </label>
-      </div>
-            </td>
-            <td>  <div class="form-check form-check">
-      
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="" id="" value="checkedValue"> Database Administration
-        </label>
-      </div>
-      </td>
-            <td>
-              <div class="form-check form-check">
-      
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="" id="" value="checkedValue"> Database Administration
-        </label>
-      </div></td>
-          </tr>
-        </tbody>
-      </table>
-      <hr>
-      <div>
-      <p>Select appopriate level for each skill</p>
-      <div class = "row">
-
-    <div class="form-group">
-        <label for=""></label>
-        <select class="custom-select" name="" id="">
-          <option selected>Select one</option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-        </select>
-      </div>
-      </div>
+  <div class="card-body">
+  <h4 class="card-title">Skills</h4>
+  <hr>
+    <div class = "row">
     
+    <div class = "col">
+    <div class="form-group">
+      <label for="">Select Category</label>
+      <select class="form-control form-control-md" name="" id="">
+        <option>Design</option>
+        <option>Web Developement</option>
+        <option>Android Developement</option>
+      </select>
+      <br>
+       <p class="card-text">Select at least on skill and your 
+          level of proficiency</p>
     </div>
-      </div>
-      <!--- buttons for next-->
-      <div class = "row">
-      <a name="" id="" class="btn btn-primary" data-toggle="pill" 
-      aria-controls="v-pills-profile" aria-selected="false" href="#v-pills-profile" role="button">Next</a>
-      </div>
-      
-      
-      </div>
-      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
     </div>
+    <div class = "col">
+    <!--first skill-->
+    <div>
+    <select class="form-control form-control-sm" name="firstSkill" id="firstSkill">
+        <option selected>Select Skill</option>
+        <option>Web Developement</option>
+        <option>Android Developement</option>
+        <option>Graphic Design</option>
+      </select>
+   <div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="firstSkillBeginner" name="firstSkillLevel" class="custom-control-input" disabled>
+  <label class="custom-control-label" for="firstSkillBeginner">Beginner</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="firstSkillSec" name="firstSkillLevel" class="custom-control-input" disabled>
+  <label class="custom-control-label" for="firstSkillSec">Intermediate</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="firstSkillProf" name="firstSkillLevel" class="custom-control-input" disabled>
+  <label class="custom-control-label" for="firstSkillProf">Proficient</label>
+</div>
+      
+    </div>
+    <!--seconf skill--->
+     <div>
+    <select class="form-control form-control-sm" name="" id="">
+        <option selected>Select Skill</option>
+        <option>Web Developement</option>
+        <option>Android Developement</option>
+        <option>Graphic Design</option>
+      </select>
+   <div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="secSkillBeginner" name="secSkill" class="custom-control-input" disabled>
+  <label class="custom-control-label" for="secSkillBeginner">Beginner</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="secSkillInter" name="secSkill" class="custom-control-input" disabled>
+  <label class="custom-control-label" for="secSkillInter">Intermediate</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="secSkillProf" name="secSkill" class="custom-control-input" disabled>
+  <label class="custom-control-label" for="secSkillProf">Proficient</label>
+</div>
+      
+    </div>
+    <!-- third skill-->
+     <div>
+    <select class="form-control form-control-sm" name="" id="">
+        <option selected>Select Skill</option>
+        <option>Web Developement</option>
+        <option>Android Developement</option>
+        <option>Graphic Design</option>
+      </select>
+   <div class="custom-control custom-radio custom-control-inline ">
+  <input type="radio" id="thirdSkillBeginner" name="thirdSkill" class="custom-control-input disabled" disabled>
+  <label class="custom-control-label " for="thirdSkillBeginner">Beginner</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline" >
+  <input type="radio" id="thirdSkillInter" name="thirdSkill" class="custom-control-input" disabled>
+  <label class="custom-control-label" for="thirdSkillInter">Intermediate</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="thirdSkillProf" name="thirdSkill" class="custom-control-input" disabled>
+  <label class="custom-control-label" for="thirdSkillProf">Proficient</label>
+</div>
+      
+    </div>
+    </div>
+   
+    </div>
+    
+   <div class = "educationSection">
+    <h4>Education/Certificates</h4>
+    <hr>
+    <button type="button" class="btn btn-secondary btn-md fl-btn-small-dk addEducation">
+    <i class="fa fa-dk fa-plus-square" aria-hidden="true"></i>
+    Add New</button>
+    <!--Education/Certificate field-->
+    <div class = "eduForm-holder">
+    <!--left: type-->
+    <div class = "row">
+    <div class="form-group col-3">
+      <label for=""></label>
+      <select class="form-control form-control-sm" name="" id="">
+        <option selected>Type</option>
+        <option>Certificate</option>
+        <option>Diploma</option>
+        <option>Degree</option>
+      </select>
+    </div>
+      <!--right: provider-->
+    <div class="form-group col ">
+      <label for=""></label>
+      <input type="text"
+          class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="School/Institution">
+      <small id="helpId" class="form-text text-muted">Provider of Certifcate</small>
+  
+    </div>
+    </div>
+    <!--Course/Programme-->
+    <div class="form-group">
+      <label for=""></label>
+      <input type="text"
+        class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="Area of Study">
+      <small id="helpId" class="form-text text-muted">Programme/Course</small>
+    </div>
+        
+<!--Dates-->
+     <div class="row">
+
+     <div class="form-group col">
+       <input type="date"
+           class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="">
+       <small id="helpId" class="form-text text-muted">Date Started</small>
+     </div>
+     <div class="form-group col">  
+       <input type="date"
+           class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="">
+       <small id="helpId" class="form-text text-muted">Date Ended/Ending</small>
+     </div>
+     <!--remove added education-->
+     <div class=" eduForm-holder-remove form-group col-3">
+       <button type="button" class="removeEducation btn btn-secondary btn-md">
+       <i class="fa fa-minus-circle" aria-hidden="true"></i>
+       Remove</button> 
+     </div>
+
+    </div>
+
+   </div>
+  </div>
+
+  <div class="PersonalInfo">
+  <h4>Personal Information</h4>
+  <hr>
+  <div class="row">
+  <div class="col-4">
+   <div id="profile-container">
+   <img id="profileImage" src="{% static 'img/avatar.png'%}" />
+  </div>
+      <input id="imageUpload" type="file" 
+       name="profile_photo" placeholder="Photo" required="" capture>
+    <small>Chose profile image (150px Square)</small>
+  </div>
+  <div class="col">
+    <div class="form-group">
+  <label for="">Country</label>
+  <select class="form-control form-control-sm" name="" id="">
+      <option selected>Select Country</option>
+      <option>Ghana</option>
+      <option>Hungary</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="">City</label>
+      <input type="text"
+          class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="">Address</label>
+      <input type="text"
+          class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="">
+    </div>
+    
+  </div>
+    
+  </div>
+  
+
+  <div class="row">
+
+  
+    <div class="form-group col-4">
+      <label for="">Contact</label>
+      <input type="text"
+          class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="">
+    </div>
+
+  </div>
+
+    
+  </div>  
+  </div>
+  </div>
+  <div class="card-footer text-muted">
+    <button type="submit" class="btn btn-success btn-block fl-btn-small"><i class="fa fa-dk fa-save"></i>
+    SAVE PROFILE</button>
   </div>
 </div>
-     
-   </div>
-
 
 
 
@@ -136,6 +241,9 @@
     <script src="{% static 'js/bootstrap.min.js' %}" ></script>
      <script src="{% static 'js/customscripts.js' %}" ></script>
     <script src="{% static 'js/fontawesome.min.js' %}" ></script>
+    <script src="{% static 'js/jquery.smartWizard.min.js' %}" ></script>
 
+<!-- JavaScript -->
+{% comment %} <script src="https://cdn.jsdelivr.net/npm/smartwizard@5.0.0/dist/js/jquery.smartWizard.min.js" type="text/javascript"></script> {% endcomment %}
   </body>
 </html>

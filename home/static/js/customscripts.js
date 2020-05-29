@@ -21,28 +21,36 @@ $(document).ready(
 
         });
 
-        // $("#category").onChange(function() {
-        //     $("#skills").toggle().slideDown();
-        //     // $(".modal-footer").hide();
-
-        // });
-
-        $('#category').on('change', function() {
-            $('#skills').show().slideDown()
-
+        // Cloning education form
+        var id_count = 1;
+        $('.addEducation').on('click', function() {
+            var source = $('.eduForm-holder:first'),
+                clone = source.clone();
+            // clone.find(':input').attr('id', function(i, val) {
+            //     return val + id_count;
+            // });
+            clone.appendTo('.form-holder-append');
+            id_count++;
         });
 
-        $("li").click(function() {
-            // remove classes from all
-            $("#v-pills-home-tab").removeClass("active");
-            // add class to the one we clicked
-            $("$v-pill-profile").addClass("active");
+        // Removing added education/certificate
+        $('body').on('click', '.removeEducation', function() {
+            var closest = $(this).closest('.eduForm-holder').remove();
         });
-        // $('#default').click(function() {
-        //     $('#skills').hide().slideUp()
 
-        // });
+        $("#profileImage").click(function(e) {
+            $("#imageUpload").click();
+        });
 
+        function fasterPreview(uploader) {
+            if (uploader.files && uploader.files[0]) {
+                $('#profileImage').attr('src',
+                    window.URL.createObjectURL(uploader.files[0]));
+            }
+        }
 
+        $("#imageUpload").change(function() {
+            fasterPreview(this);
+        });
 
     });
