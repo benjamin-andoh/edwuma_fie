@@ -269,10 +269,18 @@
 }
 
 .profile-card {
-    width: 50%;
+    width: 50rem;
     margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
+}
+
+.skilladd {
+    margin-bottom: 0.5rem;
+}
+
+.skilladd input[type='radio']:checked {
+    background-color: #20c141;
 }
 
 
