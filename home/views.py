@@ -32,20 +32,15 @@ def accountProfile(request):
 @unauthenticated_user
 def registerPage(request):
     form = CreateUserForm()
-
     if request.method == "POST":
         form = CreateUserForm(request.POST)
         if form.is_valid():
             user = form.save()
-
             username = form.cleaned_data.get('username')
-
             # user who registers must be assigned to a group
             group = Group.objects.get(name='freelancer')
-
             # adding a user to a group
             user.groups.add(group)
-
             # show a success message
             messages.success(request, 'account was created for ' + username)
 
