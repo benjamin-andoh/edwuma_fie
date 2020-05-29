@@ -30,10 +30,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a style="height:20px; font-weight:10 ;" class="btn btn-primary btn-xl js-scroll-trigger" href="{% url 'login'%}">Login</a></li>
-                        <li class="nav-item"><a style="height:20px; font-weight:10 ;" class="btn btn-primary btn-xl js-scroll-trigger" href="{%url 'register'%}">Sign up</a></li>
-
-                     </ul>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -42,7 +39,8 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome</div>
                 <div style="color: antiquewhite;"class="masthead-heading text-uppercase">Find The Best Freelance Services</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Find Out More</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{%url 'register'%}">Sign Up</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{%url 'login'%}">Login</a>
             </div>
         </header>
         <!-- Services-->
@@ -140,7 +138,7 @@
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6"
                                 >
-                                <img class="img-fluid" src="% static 'new/img/digital.png' %}" alt=""
+                                <img class="img-fluid" src="{% static 'new/img/digital.png' %}" alt=""
                             /></a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Digital Marketing</div>
@@ -207,13 +205,13 @@
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+                    <h2 class="section-heading text-uppercase">Join our Community</h2>
                     <h3 class="section-subheading text-muted">Collaborating across the globe.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="" alt="{% static 'new/assets/img/team/1.jpg' %}" />
+                            <img class="mx-auto rounded-circle" src="{% static 'new/assets/img/team/1.jpg' %}" alt="" />
                             <h4>Kay Garland</h4>
                             <p class="text-muted">Lead Designer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
@@ -480,6 +478,6 @@
         <script src="{% static 'new/assets/mail/jqBootstrapValidation.js' %}"></script>
         <script src="{% static 'new/assets/mail/contact_me.js' %}"></script>
         <!-- Core theme JS-->
-        <script src="% static 'new/js/scripts.js' %}"></script>
+        <script src="{% static 'new/js/scripts.js' %}"></script>
     </body>
 </html>
