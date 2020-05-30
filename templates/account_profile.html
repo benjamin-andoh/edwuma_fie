@@ -25,8 +25,48 @@
     <h4>Set your account up</h4>
   </div>
   <div class="card-body">
-  <h4 class="card-title">Skills</h4>
+  <h4 class="card-title">Personal Information</h4>
   <hr>
+  <div class="row">
+  <div class="col-4">
+   <div id="profile-container">
+   <img id="profileImage" src="{% static 'img/avatar.png'%}" />
+  </div>
+      <input id="imageUpload" type="file" 
+       name="profile_photo" placeholder="Photo" required="" capture>
+    <small>Chose profile image (150px Square)</small>
+  </div>
+  <div class="col">
+    <div class="form-group">
+  <label for="">Country</label>
+  <select class="form-control form-control-sm" name="" id="">
+      <option selected>Select Country</option>
+      <option>Ghana</option>
+      <option>Hungary</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="">City</label>
+      <input type="text"
+          class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="">Address</label>
+      <input type="text"
+          class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="">
+    </div>
+     <div class="form-group">
+      <label for="">Contact</label>
+      <input type="text"
+          class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="">
+    </div>
+    
+  </div>
+    
+  </div>
+  <div class="skills">
+  <h4>Skills</h4>
+    <hr>
     <div class = "row">
     
     <div class = "col">
@@ -110,9 +150,9 @@
       
     </div>
     </div>
-   
+   </div>
     </div>
-    
+    </div>
    <div class = "educationSection">
     <h4>Education/Certificates</h4>
     <hr>
@@ -173,58 +213,6 @@
 
    </div>
   </div>
-
-  <div class="PersonalInfo">
-  <h4>Personal Information</h4>
-  <hr>
-  <div class="row">
-  <div class="col-4">
-   <div id="profile-container">
-   <img id="profileImage" src="{% static 'img/avatar.png'%}" />
-  </div>
-      <input id="imageUpload" type="file" 
-       name="profile_photo" placeholder="Photo" required="" capture>
-    <small>Chose profile image (150px Square)</small>
-  </div>
-  <div class="col">
-    <div class="form-group">
-  <label for="">Country</label>
-  <select class="form-control form-control-sm" name="" id="">
-      <option selected>Select Country</option>
-      <option>Ghana</option>
-      <option>Hungary</option>
-    </select>
-    </div>
-    <div class="form-group">
-      <label for="">City</label>
-      <input type="text"
-          class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="">
-    </div>
-    <div class="form-group">
-      <label for="">Address</label>
-      <input type="text"
-          class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="">
-    </div>
-     <div class="form-group">
-      <label for="">Contact</label>
-      <input type="text"
-          class="form-control form-control-sm" name="" id="" aria-describedby="helpId" placeholder="">
-    </div>
-    
-  </div>
-    
-  </div>
-  
-
-  <div class="row">
-
-  
-   
-
-  </div>
-
-    
-  </div>  
   </div>
   </div>
   <div class="card-footer text-muted">
