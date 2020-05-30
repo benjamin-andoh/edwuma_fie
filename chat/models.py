@@ -8,5 +8,5 @@ class Room(models.Model):
     slug = models.CharField(max_length=50)
 
     def __str__(self):
-        """Returns human-readable representation of the model instance."""
+        """Return the name."""
         return self.name
