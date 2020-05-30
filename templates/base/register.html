@@ -44,22 +44,23 @@
                 <hr> -->
                 <!--Username-->
                 <form class="needs-validation" action="" method="post" novalidate>
+                    {%csrf_token%}
                     <div class="md-form input-with-pre-icon minus-margin-bttm">
                         <i class="fa fa-login fa-user input-prefix"></i>
-                        <input type="text" id="username" class="form-control" placeholder="Username" required>
+                        {{form.username}}
                     </div>
                     <!--first name and last name-->
                     <div class="row name ">
                         <div class="col minus-margin-bttm">
                             <div class="md-form input-with-pre-icon minus-margin-bttm">
                                 <i class="fa fa-user input-prefix"></i>
-                                <input type="text" id="firstName" class="form-control" placeholder="First Name" required>
+                                {{form.first_name}}
                             </div>
                         </div>
                         <div class="col minus-margin-bttm">
                             <div class="md-form input-with-pre-icon minus-margin-bttm">
                                 <i class="fa fa-user input-prefix"></i>
-                                <input type="text" id="lastName" class="form-control" placeholder="Last Name" required>
+                                {{form.last_name}}
                             </div>
                         </div>
                     </div>
@@ -67,7 +68,7 @@
 
                     <div class="md-form email input-with-pre-icon minus-margin-bttm">
                         <i class="fa fa-envelope input-prefix"></i>
-                        <input type="email" id="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                      {{form.email}}
                     </div>
 
                     <div class="invalid-feedback">Please enter email</div>
@@ -77,14 +78,14 @@
                         <div class="col">
                             <div class="md-form  input-with-pre-icon">
                                 <i class="fas fa-lock input-prefix"></i>
-                                <input type="password" id="userPassword" class="form-control userPassword validate " placeholder="Password" required>
+                                {{form.password1}}
                                 <label for="userPassword" data-error="Wrong/Weak Password" data-success="Appopriate Password"></label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="md-form input-with-pre-icon">
                                 <i class="fa fa-lock input-prefix"></i>
-                                <input type="password" id="userConfirmPassword" class="form-control passRepeat" placeholder="Repeat Password" required>
+                                {{form.password2}}
                             </div>
                         </div>
                         <div class="match invalid-feedback">Passwords don't match</div>
@@ -125,6 +126,13 @@
                     <button id="signupButton" type="submit" class="btn btn-outline fl-btn-pm btn-lg btn-rounded btn-block">Confirm</button>
 
                 </form>
+
+                {% if messages %}
+                {% for message in messages %}
+                <p class="font-weight-light">{{message}}</p>
+                {% endfor %}
+                {% endif %}
+
 
             </div>
         </div>

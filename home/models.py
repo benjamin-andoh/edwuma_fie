@@ -1,15 +1,10 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 from django.db import models
 
 # Create your models here.
 
 # from phone_field import PhoneField
 from phonenumber_field.modelfields import PhoneNumberField
-
-
-# class Role(models.Model):
-#     role_name = models.CharField(max_length=50)
-
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -21,7 +16,7 @@ class UserProfile(models.Model):
     bio = models.TextField(max_length=50)
     registration_date = models.DateField(auto_now=False, auto_now_add=False)
     picture = models.ImageField(height_field=None, width_field=None, max_length=2000)
-    # role_id = models.ForeignKey(Role, on_delete=models.CASCADE)
+
 
 class Job(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
