@@ -127,6 +127,13 @@
 
                 </form>
 
+                {% if messages %}
+                {% for message in messages %}
+                <p class="font-weight-light">{{message}}</p>
+                {% endfor %}
+                {% endif %}
+
+
             </div>
         </div>
 

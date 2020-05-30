@@ -35,6 +35,12 @@
     <div class="card fl-login-card">
         <div class="card-body">
             <div class="md-form">
+                 {% if messages %}
+                {% for message in messages %}
+                <p class="font-weight-light">{{message.tag}}</p>
+                {% endfor %}
+                {% endif %}
+
                 <!-- Default form login -->
                 <form class="text-center needs-validation" action="#!" novalidate>
                     <p class="h1 mb-4 font-weight-bolder" style="color: #208927;">Login</p>
@@ -43,7 +49,7 @@
                     <div class="md-form input-with-pre-icon">
                         <div>
                             <i class="fas fa-envelope input-prefix"></i>
-                            <input type="text" id="username" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                            <input type="text" id="username" class="form-control" placeholder="Username" required>
                         </div>
                         <div class="invalid-feedback">Please enter email</div>
                     </div>

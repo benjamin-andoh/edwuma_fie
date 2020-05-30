@@ -65,11 +65,8 @@ def registerPage(request):
                 [user.email]
             )
             email_message.send()
-
-
+            return redirect('activatecheck')
             messages.success(request, 'account was created for ' + username)
-            login(request,user)
-            return redirect('dashboard')
 
     context = {'form': form}
     return render(request, 'base/register.html', context)
@@ -87,12 +84,11 @@ def loginPage(request):
         # allow registered user to see the dashboard
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('dashboard')
         else:
             messages.info(request, 'Username or password incorrect')
 
-    context = {}
-    return render(request, 'base/login.html', context)
+    return render(request, 'base/login.html')
 
 
 def logoutUser(request):
@@ -102,7 +98,7 @@ def logoutUser(request):
 
 def userPage(request):
     context = {}
-    return render(request, 'base/user.html', context)
+    return render(request,'base/user.html',context)
 
 
 def ActivateAccountView(request,uidb64,token):
@@ -115,4 +111,7 @@ def ActivateAccountView(request,uidb64,token):
         user.is_active = True
         user.save()
         return redirect('login')
-    return render(request, 'activate_failed', status=401)
+    return render(request,'activate_failed.html', status=401)
+
+def Activate_check(request):
+    return render(request,'activate_check.html')

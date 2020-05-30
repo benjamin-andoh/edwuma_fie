@@ -21,6 +21,9 @@ EMAIL_PORT = EMAIL_PORT
 import os
 
 import pymysql
+
+from django.contrib import messages
+
 from dotenv import load_dotenv
 
 pymysql.install_as_MySQLdb()

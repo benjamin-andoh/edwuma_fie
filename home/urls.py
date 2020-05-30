@@ -11,5 +11,6 @@ urlpatterns = [
     path('user', views.userPage, name='user'),
     path('profile',views.accountProfile, name = 'profile'),
     path('activate/<uidb64>/<token>',views.ActivateAccountView,name='activate'),
+    path('activity_check/',views.Activate_check,name='activatecheck'),
 
 ]
