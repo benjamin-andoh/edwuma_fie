@@ -13,12 +13,12 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 import pymysql
+from dotenv import load_dotenv
 
 pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -31,11 +31,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
-    'home.apps.HomeConfig', #new
+    'home.apps.HomeConfig',  # new
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,8 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainApp',
     'adminApp',
+    'chat',
 
-    'phonenumber_field'
+
+    'phonenumber_field',
+    # 'chat.apps.ChatConfig',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +61,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'zeeFreeProj.urls'
+
+TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID', None)
+TWILIO_API_KEY = os.environ.get('SK2e129556374d50dbe48cac1fe3083418', None)
+TWILIO_API_SECRET = os.environ.get('XRPa28RRSqVRNvbZLVPMqf8491jIv0nk', None)
+TWILIO_CHAT_SERVICE_SID = os.environ.get('TWILIO_CHAT_SERVICE_SID', None)
+
+dotenv_path = os.path.join(BASE_DIR, '.env')
+load_dotenv(dotenv_path)
 
 TEMPLATES = [
     {
@@ -80,7 +90,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'zeeFreeProj.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -96,13 +105,12 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS':
-        {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+            {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+            }
 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -122,7 +130,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -136,11 +143,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static')
-    ]    #new
+]
+# new
