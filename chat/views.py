@@ -18,13 +18,8 @@ def all_rooms(request):
 
 
 def room_detail(request, slug):
-    room = None
-    try:
-        room = Room.objects.get(slug=slug)
-    except Exception as e:
-        print("the query is not in the database")
-    finally:
-        context = {'room': room}
+    room = Room.objects.get(slug='General')
+    context = {'room': room}
     return render(request, 'chat/room_detail.html', context)
 
 
