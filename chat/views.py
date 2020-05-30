@@ -11,6 +11,7 @@ from .models import Room
 fake = Faker()
 
 
+# landing page for the chat
 def all_rooms(request):
     rooms = Room.objects.all()
     context = {'rooms': rooms}

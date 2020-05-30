@@ -118,17 +118,16 @@ function processPage(page) {
   }
 }
 
-
-});
-
 // Add newly sent messages to the channel
 let $form = $("#message-form");
 let $input = $("#message-input");
 $form.on("submit", function(e) {
   e.preventDefault();
+  console.log("Form Submitted");
   if (roomChannel && $input.val().trim().length > 0) {
     roomChannel.sendMessage($input.val());
     $input.val("");
   }
+  });
 });
 
