@@ -166,9 +166,35 @@ $('.addEducation').on('click', function() {
 });
 
 // Removing added education/certificate
-$('body').on('click', '.removeEducation', function() {
-    var closest = $(this).closest('.eduForm-holder').remove();
+// $('body').on('click', '.removeEducation', function() {
+//     var closest = $(this).closest('.eduForm-holder').remove();
+// });
+
+
+$("#country_select").countrySelect();
+$("#country_selector").countrySelect({
+    defaultStyling: "inside"
 });
+
+$('.sCountries').phonecode({
+    setClass: 'phone'
+});
+
+// phone masking 
+$("input[id='userContact']").on("input", function() {
+    $("input[id='userContact2']").val(destroyMask(this.value));
+    this.value = createMask($("input[id='userContact2']").val());
+})
+
+function createMask(string) {
+    console.log(string)
+    return string.replace(/(\d{3})(\d{3})(\d{3})/, "$1-$2-$3");
+}
+
+function destroyMask(string) {
+    console.log(string)
+    return string.replace(/\D/g, '').substring(0, 9);
+}
 
 $("#profileImage").click(function(e) {
     $("#imageUpload").click();

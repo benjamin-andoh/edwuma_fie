@@ -129,7 +129,10 @@
     background-color: #1ac458;
 } */
 
+
 /* css for content of pages */
+
+
 /*
 
 .content {
@@ -204,8 +207,9 @@
 
 .fl-nav-items {
     /* float: right; */
-    align-content: flex-end;
-}
+
+
+/* align-content: flex-end; */
 
 .fl-nav-right-pad {
     padding-right: 15em;
@@ -235,7 +239,7 @@
 }
 
 
-/* icons */
+/* icons
 
 .fa {
     color: #207441;
@@ -254,7 +258,7 @@
 }
 
 
-/* ------modal elements ----- */
+ ------modal elements ----- 
 
 .fl-modal-login {
     padding-left: 3em;
@@ -279,6 +283,8 @@
 .modal-header {
     margin-bottom: 1rem;
 }
+
+*/
 
 .fl-input-sm {
     border-radius: 2rem;
@@ -394,6 +400,46 @@
 
 /* styling for profile setup */
 
+#imageUpload {
+    display: none;
+}
+
+#profileImage {
+    cursor: pointer;
+}
+
+#profile-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#profile-container img {
+    width: 150px;
+    height: 150px;
+}
+
+.profile-card {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: auto;
+    width: 60rem;
+}
+
+.fap {
+    color: #006228;
+}
+
+
+/* 
 .skills {
     display: none;
 }
@@ -416,21 +462,21 @@
 
 /* profile form setup styles  */
 
-.eduForm-holder-remove {
+
+/*.eduForm-holder-remove {
     display: none;
 }
-
 
 /* profile image upload*/
 
+
+/*
 #imageUpload {
     display: none;
 }
-
 #profileImage {
     cursor: pointer;
 }
-
 #profile-container {
     width: 150px;
     height: 150px;
@@ -441,7 +487,6 @@
     -o-border-radius: 50%;
     border-radius: 50%;
 }
-
 #profile-container img {
     width: 150px;
     height: 150px;
