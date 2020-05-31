@@ -110,8 +110,12 @@ def ActivateAccountView(request,uidb64,token):
     if user is not None and generate_token.check_token(user,token):
         user.is_active = True
         user.save()
-        return redirect('login')
+        login(request,user)
+        return redirect('completeprofile')
     return render(request,'activate_failed.html', status=401)
 
 def Activate_check(request):
     return render(request,'activate_check.html')
+
+def CompleteProfile(request):
+    return render(request,'completeProfile.html')
