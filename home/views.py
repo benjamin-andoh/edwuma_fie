@@ -41,7 +41,7 @@ def accountProfile(request):
             form.save()
             user = User.object.all()
             login(request, user)
-            return redirect(dashboard)
+            return redirect('userprofile')
         else:
             messages.error(request, 'invalid entry')
     form = UserProfileForm()
