@@ -5,18 +5,18 @@ from django.db import models
 
 # from phone_field import PhoneField
 from phonenumber_field.modelfields import PhoneNumberField
+from django_countries.fields import CountryField
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    address = models.CharField(max_length=50)
+    title = models.TextField(max_length=50,default='Developer')
+    address = models.TextField(max_length=50)
     phone = PhoneNumberField(blank=True)
-    location_country = models.CharField(max_length=50)
+    location_country = CountryField()
     city = models.CharField(max_length=50)
-    language = models.CharField(max_length=50)
-    bio = models.TextField(max_length=50)
-    registration_date = models.DateField(auto_now=False, auto_now_add=False)
-    picture = models.ImageField(height_field=None, width_field=None, max_length=2000)
-
+    profile_summary = models.TextField(max_length=50)
+    picture = models.ImageField(height_field=None, width_field=None, max_length=2000,upload_to='media/')
+    roles = models.CharField(max_length=20,default='Client')
 
 class Job(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)

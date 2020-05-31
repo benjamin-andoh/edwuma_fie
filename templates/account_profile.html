@@ -28,8 +28,12 @@
         <div class="card profile-card">
             <div class="card-body">
                 <h4 class="card-title text-center font-weight-bold"><a>Personal Data</a></h4>
+                <h4 class="card-title text-center font-weight-bold"><a>Hi {{user.username}}, Please comple your registration</a></h4>
                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                <form role="form needs-validation" action="" method="post" novalidate>
+                 {%if user.is_authenticated %}
+                <form role="form needs-validation" action="" method="post" enctype="multipart/form-data" novalidate>
+                    {%csrf_token%}
+
                     <div class="row">
                         <div class="col-md-3-12">
                             <div class="ml-3">
@@ -43,10 +47,11 @@
                             <hr>
                             <div class="list-group-flush text-muted">
                                 <div class="list-group-item">
-                                    <p class="mb-0"><i class="fa fa-address-card mr-2" aria-hidden="true"></i> Freelancer</p>
+                                    <p class="mb-0"><i class="fa fa-address-card mr-2" aria-hidden="true"></i>
+                                        {{form.roles}}</p>
                                 </div>
                                 <div class="list-group-item">
-                                    <p class="mb-0"><i class="fa fa-calendar mr-2" aria-hidden="true"></i> Joined 29th May, 2020.</p>
+                                    <p class="mb-0"><i class="fa fa-calendar mr-2" aria-hidden="true"></i> {{user.date_joined}}</p>
                                 </div>
                                 <div class="list-group-item">
                                     <p class="mb-0"><i class="fa fa-heart mr-2" aria-hidden="true"></i>0 Recommendations</p>
@@ -54,15 +59,15 @@
                             </div>
                         </div>
                         <div class="col">
-                            <h4 class="text-primary font-weigth-bold">Prince A.</h4>
-                            <small class="text-muted">abaidooprince</small> | <small class="text-muted">abaidooprince@gmail.com</small>
+                            <h4 class="text-primary font-weigth-bold">{{user.first_name}}</h4>
+                            <small class="text-muted">{{user.first_name}} {{user.last_name}}</small> | <small class="text-muted">{{user.email}}</small>
                             <hr>
                             <div class="row">
                                 <div class="col">
                                     <div class="md-form ml-4">
                                         <div class="md-form">
                                             <i class="fa fap fa-user-tag prefix" aria-hidden="true"></i>
-                                            <input type="text" id="profHeadline" class=" form-control" aria-describedby="profHeadlineHelp " required>
+                                            {{form.title}}
                                             <label for="profHeadline ">Professional Headline</label>
                                             <small id="profHeadlineHelp " class="form-text text-muted ">
                                             What best describes the services you provide. E.g. Branding Agency, Software Developer, Graphic Designer...
@@ -72,15 +77,13 @@
 
                                         <div class="md-form country">
                                             <!-- <i class="fa fap fa-2x fa-globe" aria-hidden="true"></i> -->
-
-                                            <input class="form-control" type="text" name="" id="country_selector">
-                                            <input class="form-control" type="text" name="" id="country_selectors" style="display: none;">
+                                            {{form.location_country}}
                                             <small id="countryHelp " style="margin-left: 2.3rem;" class="form-text text-muted">Select Country</small>
                                         </div>
 
                                         <div class="md-form">
                                             <i class="fa fap fa-city prefix" aria-hidden="true"></i>
-                                            <input type="text" id="userCity" class="form-control">
+                                            {{form.city}}
                                             <label for="userCity">Enter City</label>
                                         </div>
                                         <div class="md-form">
@@ -99,20 +102,18 @@
                                     <div class="md-form ">
                                         <i class="fas fap fa-sticky-note  prefix" aria-hidden="true"></i>
                                         <!-- <i class="fa fap fa-list prefix" aria-hidden="true"></i> -->
-                                        <textarea id="textarea-char-counter" class="form-control md-textarea" length="250" rows="4"></textarea>
+                                        {{form.profile_summary}}
                                         <label for="textarea-char-counter">Profile Summary</label>
                                         <small id="summaryHelp" class="form-text text-muted ">Add a professional summary of your potentials, skills, services or products</small>
                                     </div>
                                     <div class="md-form">
                                         <i class="fa fap fa-location-arrow prefix" aria-hidden="true"></i>
-                                        <textarea id="userAddress" class="form-control md-textarea" length="50" rows="2"></textarea>
+                                       {{form.address}}
                                         <label for="textarea-char-counter">Address</label>
                                         <small id="addressHelp" class="form-text text-muted ">Enter either location address or post address</small>
                                     </div>
 
-                                    <button class="btn fl-btn-pm btn-rounded btn-block my-4 mt-2" type="submit">Save</button>
-
-
+                                    <input type="submit" class="btn fl-btn-pm btn-rounded btn-block my-4 mt-2" value="Save">
                                 </div>
                             </div>
 
@@ -120,7 +121,9 @@
                         </div>
 
                     </div>
+
                 </form>
+                {% endif %}
             </div>
         </div>
 

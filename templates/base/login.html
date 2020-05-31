@@ -42,23 +42,24 @@
                 {% endif %}
 
                 <!-- Default form login -->
-                <form class="text-center needs-validation" action="#!" novalidate>
+                <form class="text-center needs-validation" method="post" novalidate>
+                    {%csrf_token%}
                     <p class="h1 mb-4 font-weight-bolder" style="color: #208927;">Login</p>
                     <hr>
                     <!-- Email -->
                     <div class="md-form input-with-pre-icon">
                         <div>
                             <i class="fas fa-envelope input-prefix"></i>
-                            <input type="text" id="username" class="form-control" placeholder="Username" required>
+                            {{form.username}}
                         </div>
-                        <div class="invalid-feedback">Please enter email</div>
+                        <div class="invalid-feedback">Please enter username</div>
                     </div>
 
                     <!-- Password -->
                     <div class="md-form input-with-pre-icon">
                         <div>
                             <i class="fa fa-lock input-prefix" aria-hidden="true"></i>
-                            <input type="password" id="userPassword" class="form-control mb-4" placeholder="Password" required>
+                            {{form.password}}
                             <!-- <label for="userPassword"></label> -->
                         </div>
                         <div class="invalid-feedback">Please enter password</div>
@@ -82,7 +83,7 @@
 
                     <!-- Sign in button -->
                     <div class="login-bottom">
-                        <button class="btn fl-btn-pm btn-rounded btn-block my-4" type="submit">LOGIN</button>
+                        <input class="btn fl-btn-pm btn-rounded btn-block my-4" type="submit" value="LOGIN">
 
                         <!-- Register -->
                         <p>Not a member?
@@ -97,19 +98,7 @@
                 <!-- Default form login -->
 
             </div>
-            <!--forgto password form-->
-            <div id="forgot-password" class="forgot-password">
-                <form class="needs-validation2" action="" method="post" novalidate>
-                    <div class="md-form">
-                        <input type="email" id="rp-email" class="email form-control " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-                        <label for="email">Enter your Email</label>
-                    </div>
-                    <div class="invalid-feedback">Please enter valid email</div>
-                    <button type="submit" class="btn  btn-outline fl-btn-pm btn-rounded btn-block">RESET PASSWORD</button>
-                </form>
-            </div>
-
-        </div>
+            <!--forgot password form-->
 
 
 
