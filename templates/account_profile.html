@@ -29,7 +29,10 @@
             <div class="card-body">
                 <h4 class="card-title text-center font-weight-bold"><a>Personal Data</a></h4>
                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                 {%if user.is_authenticated %}
                 <form role="form needs-validation" action="" method="post" novalidate>
+                    {%csrf_token%}
+
                     <div class="row">
                         <div class="col-md-3-12">
                             <div class="ml-3">
@@ -46,7 +49,7 @@
                                     <p class="mb-0"><i class="fa fa-address-card mr-2" aria-hidden="true"></i> Freelancer</p>
                                 </div>
                                 <div class="list-group-item">
-                                    <p class="mb-0"><i class="fa fa-calendar mr-2" aria-hidden="true"></i> Joined 29th May, 2020.</p>
+                                    <p class="mb-0"><i class="fa fa-calendar mr-2" aria-hidden="true"></i> {{user.date_joined}}</p>
                                 </div>
                                 <div class="list-group-item">
                                     <p class="mb-0"><i class="fa fa-heart mr-2" aria-hidden="true"></i>0 Recommendations</p>
@@ -54,8 +57,8 @@
                             </div>
                         </div>
                         <div class="col">
-                            <h4 class="text-primary font-weigth-bold">Prince A.</h4>
-                            <small class="text-muted">abaidooprince</small> | <small class="text-muted">abaidooprince@gmail.com</small>
+                            <h4 class="text-primary font-weigth-bold">{{user.first_name}}</h4>
+                            <small class="text-muted">{{user.first_name}} {{user.last_name}}</small> | <small class="text-muted">{{user.email}}</small>
                             <hr>
                             <div class="row">
                                 <div class="col">
@@ -120,7 +123,9 @@
                         </div>
 
                     </div>
+
                 </form>
+                {% endif %}
             </div>
         </div>
 

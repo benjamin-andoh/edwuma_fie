@@ -73,22 +73,26 @@ def registerPage(request):
 
 
 def loginPage(request):
-    # check if there info on the form
+    form = LoginForm
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        # check if the user has registered
-        user = authenticate(request, username=username, password=password)
-
-        # allow registered user to see the dashboard
-        if user is not None:
-            login(request, user)
-            return redirect('dashboard')
+        form = LoginForm(request=request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                if user.last_login == None:
+                    login(request,user)
+                    return redirect('profile')
+                else:
+                    login(request,user)
+                    return redirect('dashboard')
+            else:
+                messages.ERROR('Invalid Username or password')
         else:
-            messages.info(request, 'Username or password incorrect')
+            messages.ERROR('Invalid username or password')
 
-    return render(request, 'base/login.html')
+    return render(request,'base/login.html', {'form':form})
 
 
 def logoutUser(request):
@@ -110,8 +114,7 @@ def ActivateAccountView(request,uidb64,token):
     if user is not None and generate_token.check_token(user,token):
         user.is_active = True
         user.save()
-        login(request,user)
-        return redirect('completeprofile')
+        return redirect('login')
     return render(request,'activate_failed.html', status=401)
 
 def Activate_check(request):
