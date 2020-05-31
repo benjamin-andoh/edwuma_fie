@@ -54,12 +54,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainApp',
     'adminApp',
-
+    'chat',
 
 
 
     'phonenumber_field',
-    # 'chat.apps.ChatConfig',
+
 ]
 
 MIDDLEWARE = [
