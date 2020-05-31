@@ -17,8 +17,9 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/countrySelect.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
 </head>
 
 <body>
@@ -134,10 +135,11 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js "></script>
     <!-- Your custom scripts (optional) -->
-    <script src="{% static 'js/customscripts.js' %} " type="text/javascript "></script>
     <script src="{% static 'js/countrySelect.min.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/addons/datatables-select.min.js' %}" type="text/javascript"></script>
     {% comment %} <script src="js/phonecode.js" type="text/javascript"></script> {% endcomment %}
+    <script src="{% static 'js/customscripts.js' %} " type="text/javascript "></script>
+
 </body>
 
 </html>
