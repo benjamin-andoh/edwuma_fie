@@ -11,11 +11,12 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.template.loader import render_to_string
-from django.utils.http import urlsafe_base64_decode,urlsafe_base64_encode
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 from django.contrib.sites.shortcuts import get_current_site
-from django.utils.encoding import force_bytes,force_text,DjangoUnicodeDecodeError
+from django.utils.encoding import force_bytes, force_text, DjangoUnicodeDecodeError
 from .utills import generate_token
+
 
 # from django.contrib.auth.models import Group
 
@@ -34,7 +35,17 @@ def dashboard(request):
 
 # @admin_only
 def accountProfile(request):
-    return render(request, 'account_profile.html')
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            user = User.object.all()
+            login(request, user)
+            return redirect(dashboard)
+        else:
+            messages.error(request, 'invalid entry')
+    form = UserProfileForm()
+    return render(request, 'account_profile.html', {'form': form})
 
 
 @unauthenticated_user
@@ -47,15 +58,15 @@ def registerPage(request):
             username = form.cleaned_data.get('username')
             user.is_active = False
             user.save()
-            #send_mail(subject,message,from_email,to_list,fail_silently=True)
+            # send_mail(subject,message,from_email,to_list,fail_silently=True)
 
             current_site = get_current_site(request)
-            email_subject='Activate Your Account'
-            message =render_to_string('activate.html',
+            email_subject = 'Activate Your Account'
+            message = render_to_string('activate.html',
                                        {
-                                           'user':user,
-                                           'domain':current_site.domain,
-                                           'uid':urlsafe_base64_encode(force_bytes(user.pk)),
+                                           'user': user,
+                                           'domain': current_site.domain,
+                                           'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                                            'token': generate_token.make_token(user)
                                        })
             email_message = EmailMessage(
@@ -82,17 +93,17 @@ def loginPage(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 if user.last_login == None:
-                    login(request,user)
+                    login(request, user)
                     return redirect('profile')
                 else:
-                    login(request,user)
+                    login(request, user)
                     return redirect('dashboard')
             else:
                 messages.ERROR('Invalid Username or password')
         else:
             messages.ERROR('Invalid username or password')
 
-    return render(request,'base/login.html', {'form':form})
+    return render(request, 'base/login.html', {'form': form})
 
 
 def logoutUser(request):
@@ -102,23 +113,25 @@ def logoutUser(request):
 
 def userPage(request):
     context = {}
-    return render(request,'base/user.html',context)
+    return render(request, 'base/user.html', context)
 
 
-def ActivateAccountView(request,uidb64,token):
+def ActivateAccountView(request, uidb64, token):
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
     except Exception as identifier:
         user = None
-    if user is not None and generate_token.check_token(user,token):
+    if user is not None and generate_token.check_token(user, token):
         user.is_active = True
         user.save()
         return redirect('login')
-    return render(request,'activate_failed.html', status=401)
+    return render(request, 'activate_failed.html', status=401)
+
 
 def Activate_check(request):
-    return render(request,'activate_check.html')
+    return render(request, 'activate_check.html')
+
 
 def CompleteProfile(request):
-    return render(request,'completeProfile.html')
+    return render(request, 'completeProfile.html')
