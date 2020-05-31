@@ -44,7 +44,7 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             user = form.save()
-            username = form.cleaned_data.get('username')
+
             user.is_active = False
             user.save()
             #send_mail(subject,message,from_email,to_list,fail_silently=True)
@@ -66,6 +66,7 @@ def registerPage(request):
             )
             email_message.send()
             return redirect('activatecheck')
+            username = form.cleaned_data.get('username')
             messages.success(request, 'account was created for ' + username)
 
     context = {'form': form}
